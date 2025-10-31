@@ -4,10 +4,9 @@ const Footer: React.FC = () => {
   return (
     <footer className="w-full bg-blue-600 text-white py-6 mt-auto">
       <div className="flex flex-col items-center justify-center space-y-4">
-        {/* Social links */}
         <div className="flex space-x-6">
           <a
-            href="https://github.com"
+            href="https://github.com/SridharVadla45/"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-blue-200 transition-colors"
@@ -17,7 +16,7 @@ const Footer: React.FC = () => {
           </a>
 
           <a
-            href="https://linkedin.com"
+            href="https://www.linkedin.com/in/sridharvadla/"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-blue-200 transition-colors"
@@ -47,7 +46,6 @@ const Footer: React.FC = () => {
           </a>
         </div>
 
-        {/* Made with love message */}
         <p className="text-sm text-center">
           Made with <span className="text-red-400">❤️</span> by Sridhar Vadla
         </p>
