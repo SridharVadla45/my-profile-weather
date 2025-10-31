@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import logo from "../assets/logo.jpeg";
 
 const Navbar: React.FC = () => {
@@ -18,33 +19,34 @@ const Navbar: React.FC = () => {
           </span>
         </div>
 
+        {/* Desktop menu */}
         <ul className="hidden md:flex space-x-10 text-lg font-medium">
           <li>
-            <a
-              href="/"
-              className="relative after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-blue-600 hover:after:w-full after:transition-all after:duration-300 hover:text-blue-700 transition-colors"
+            <Link
+              to="/"
+              className="relative after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-white/70 hover:after:w-full after:transition-all after:duration-300 hover:text-white transition-colors"
             >
               About Me
-            </a>
+            </Link>
           </li>
           <li>
-            <a
-              href="/mytown"
-              className="relative after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-blue-600 hover:after:w-full after:transition-all after:duration-300 hover:text-blue-700 transition-colors"
+            <Link
+              to="/mytown"
+              className="relative after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-white/70 hover:after:w-full after:transition-all after:duration-300 hover:text-white transition-colors"
             >
               My Town
-            </a>
+            </Link>
           </li>
         </ul>
 
+        {/* Mobile toggle */}
         <button
-          className="md:hidden focus:outline-none text-slate-700"
+          className="md:hidden focus:outline-none text-white"
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Toggle menu"
         >
           {menuOpen ? (
             <svg
-              xmlns="http://www.w3.org/2000/svg"
               className="h-7 w-7"
               fill="none"
               viewBox="0 0 24 24"
@@ -59,7 +61,6 @@ const Navbar: React.FC = () => {
             </svg>
           ) : (
             <svg
-              xmlns="http://www.w3.org/2000/svg"
               className="h-7 w-7"
               fill="none"
               viewBox="0 0 24 24"
@@ -76,14 +77,15 @@ const Navbar: React.FC = () => {
         </button>
       </div>
 
+      {/* Mobile dropdown */}
       {menuOpen && (
-        <div className="md:hidden bg-blue-600 text-white px-6 pb-4 flex flex-col space-y-3 text-lg font-medium transition-all duration-300">
-          <a href="/" className="hover:text-blue-200">
+        <div className="md:hidden bg-blue-600 text-white px-6 pb-4 flex flex-col space-y-3 text-lg font-medium">
+          <Link to="/" onClick={() => setMenuOpen(false)}>
             About Me
-          </a>
-          <a href="/mytown" className="hover:text-blue-200">
+          </Link>
+          <Link to="/mytown" onClick={() => setMenuOpen(false)}>
             My Town
-          </a>
+          </Link>
         </div>
       )}
     </nav>
