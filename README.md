@@ -1,73 +1,83 @@
-# React + TypeScript + Vite
+## About The Project
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is a simple yet interactive web application that combines a personal portfolio with a real-time weather dashboard of my current town. The portfolio section showcases details about me—my background, education, and interests—while the weather section dynamically fetches and displays current weather information using a public weather API.
 
-Currently, two official plugins are available:
+The app provides an engaging user experience by:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Displaying the temperature, location, and current weather condition.
 
-## React Compiler
+Showing relevant weather images (cold, mild, sunny) based on temperature ranges.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Allowing users to toggle between Celsius and Fahrenheit for temperature readings.
 
-## Expanding the ESLint configuration
+Maintaining a clean, modern interface using React + TailwindCSS for styling and responsiveness.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+This project demonstrates my ability to integrate API data, manage React states and hooks, and design intuitive user interfaces. It also highlights how real-world data can be presented in a simple, user-friendly way.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## Getting Started
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Follow the steps below to set up and run the project locally.
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Prerequisites
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Before you begin, ensure you have the following installed:
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+- [Node.js](https://nodejs.org/)
+- [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/)
+- A code editor like [VS Code](https://code.visualstudio.com/)
+- Internet connection (for fetching live weather data)
+
+### Built With
+
+- React + TypeScript
+- Vite
+- TailwindCSS
+- Axios (for API requests)
+- React Router DOM
+
+### Installation & Usage 
+
+_Below is an example of how you can instruct your audience on installing and setting up your app.
+
+
+1. Clone the repo
+   ```sh
+   git clone https://github.com/SridharVadla45/my-profile-weather.git
+   ```
+2. Change Directory to Root
+   ```sh 
+   cd my-profile-weather
+   ```
+3. Install NPM packages
+   ```sh
+   npm install
+   ```
+
+4. Run the Application Server on port(default)
+   ```sh
+    npm run dev
+   ```
+
+
+## Contributing
+
+Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+
+If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
+Don't forget to give the project a star! Thanks again!
+
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+
+## License
+
+Distributed under the Unlicense License. See `LICENSE.txt` for more information.
+
+
+## ApiReference for WeatherData
+https://api.open-meteo.com/v1/forecast?latitude=17.385&longitude=78.4867&current=temperature_2m
