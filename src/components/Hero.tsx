@@ -1,5 +1,6 @@
 import React from "react";
 import profile from "../assets/profile.jpg";
+import { Link } from "react-router-dom";
 
 const Hero: React.FC = () => {
   return (
@@ -21,7 +22,12 @@ const Hero: React.FC = () => {
 
           <div>
             <button className="bg-blue-600 text-white font-semibold px-6 py-3 rounded-full hover:bg-blue-700 hover:scale-105 transition-transform duration-200">
-              <a href="/mytown">Visit MyTown</a>
+              <Link
+                to="/mytown"
+                className="relative after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-white/70 hover:after:w-full after:transition-all after:duration-300 hover:text-white transition-colors"
+              >
+                My Town
+              </Link>
             </button>
           </div>
         </div>
